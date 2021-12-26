@@ -1,0 +1,10 @@
+{
+  "/api/hello": "pages/api/hello.js",
+  "/api/user/login": "pages/api/user/login.js",
+  "/api/user/register": "pages/api/user/register.js",
+  "/api/user/verify": "pages/api/user/verify.js",
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}
