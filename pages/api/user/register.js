@@ -10,7 +10,7 @@ export default async function handler(req, res) {
       [user_username]
     );
 
-    //console.log(results);
+    console.log(results);
     const data = results.data[0];
     if (data) {
       res.status(401).json({ status: { code: 401, message: "Unauthorized : Repeated username" } });
