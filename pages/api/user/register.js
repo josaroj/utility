@@ -5,9 +5,9 @@ const secretKEY = "MySecretKey";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const { user_username, user_password } = req.body;
-    const results = await query("SELECT * from user WHERE username=? AND password=?",
-      [user_username, user_password]
+    const { user_username } = req.body;
+    const results = await query("SELECT * from user WHERE username=?",
+      [user_username]
     );
 
     //console.log(results);
