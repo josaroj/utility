@@ -12,54 +12,10 @@ module.exports = require("jsonwebtoken");
 
 /***/ }),
 
-/***/ 135:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ 261:
+/***/ ((module) => {
 
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "I": () => (/* binding */ query1)
-});
-
-// UNUSED EXPORTS: db
-
-;// CONCATENATED MODULE: external "serverless-mysql"
-const external_serverless_mysql_namespaceObject = require("serverless-mysql");
-var external_serverless_mysql_default = /*#__PURE__*/__webpack_require__.n(external_serverless_mysql_namespaceObject);
-;// CONCATENATED MODULE: ./lib/db.js
-
-const db = external_serverless_mysql_default()({
-    config: {
-        host: "localhost",
-        database: "utility",
-        user: "root",
-        password: "",
-        port: 3306
-    }
-});
-async function query1(query, params) {
-    try {
-        const results = await db.query(query, params);
-        await db.end();
-        return {
-            status: {
-                code: 200,
-                message: 'OK'
-            },
-            data: results
-        };
-    } catch (e) {
-        console.log(e);
-        return {
-            status: {
-                code: 400,
-                message: 'Bad Request'
-            }
-        };
-    }
-}
-
-
+module.exports = require("serverless-mysql");
 
 /***/ }),
 
@@ -70,7 +26,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ handler)
 /* harmony export */ });
-/* harmony import */ var _lib_db__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(135);
+/* harmony import */ var _lib_db__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(808);
 /* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(344);
 /* harmony import */ var jsonwebtoken__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jsonwebtoken__WEBPACK_IMPORTED_MODULE_1__);
 
@@ -144,7 +100,7 @@ async function handler(req, res) {
 var __webpack_require__ = require("../../../webpack-api-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__(349));
+var __webpack_exports__ = __webpack_require__.X(0, [808], () => (__webpack_exec__(349)));
 module.exports = __webpack_exports__;
 
 })();
