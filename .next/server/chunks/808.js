@@ -20,7 +20,7 @@ const db = serverless_mysql__WEBPACK_IMPORTED_MODULE_0___default()({
     //     user: "root",
     //     password: "",
     //     port: 3306
-    //}
+    // }
     config: {
         host: "ble5mmo2o5v9oouq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         database: "ssz1gd4jnbtyhoks",

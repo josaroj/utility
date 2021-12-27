@@ -1,5 +1,10 @@
 {
-  "/api/hello": "pages/api/hello.js",
+  "/api/meterdata/deletedata": "pages/api/meterdata/deletedata.js",
+  "/api/meterdata/editdata": "pages/api/meterdata/editdata.js",
+  "/api/meterdata/inputdata": "pages/api/meterdata/inputdata.js",
+  "/api/meterdata/main": "pages/api/meterdata/main.js",
+  "/api/meterdata/stat": "pages/api/meterdata/stat.js",
+  "/api/meterdata/updatedata": "pages/api/meterdata/updatedata.js",
   "/api/user/login": "pages/api/user/login.js",
   "/api/user/register": "pages/api/user/register.js",
   "/api/user/verify": "pages/api/user/verify.js",

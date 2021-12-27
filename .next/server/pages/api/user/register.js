@@ -34,7 +34,7 @@ __webpack_require__.r(__webpack_exports__);
 const secretKEY = "MySecretKey";
 async function handler(req, res) {
     if (req.method === "POST") {
-        const { user_username  } = req.body;
+        const { user_username , user_password  } = req.body;
         const results = await (0,_lib_db__WEBPACK_IMPORTED_MODULE_0__/* .query */ .I)("SELECT * from user WHERE username=?", [
             user_username
         ]);

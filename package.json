@@ -1,4 +1,4 @@
-{   "main": "/pages/api/hello.js/",
+{   "main": "",
     "scripts": {
         "dev": "next dev -p 4000",
         "build": "next build",
