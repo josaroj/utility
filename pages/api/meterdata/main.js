@@ -9,6 +9,7 @@ export default async function handler(req, res){
         if(verifiedToken){
             const results0 = await query("SELECT * FROM meterdata ORDER BY id DESC LIMIT 1");
             //console.log(results0);
+            const LastDate = results0.data[0].date;
             const LastElec = results0.data[0].meterelec;
             const LastWater = results0.data[0].meterwater;
             const LastAirComp1 = results0.data[0].meteraircomp1;
@@ -74,7 +75,7 @@ export default async function handler(req, res){
             const MinAirComp2 = results11.data[0].MinAirComp2;
             //console.log(MinAirComp2);
 
-            const test = {LastElec : LastElec, AvgElec : AvgElec, MaxElec : MaxElec, MinElec : MinElec, 
+            const test = {LastDate : LastDate, LastElec : LastElec, AvgElec : AvgElec, MaxElec : MaxElec, MinElec : MinElec, 
                 LastWater : LastWater, AvgWater : AvgWater, MaxWater : MaxWater, MinWater : MinWater, 
                 LastAirComp1 : LastAirComp1, AvgAirComp1 : AvgAirComp1, MaxAirComp1 : MaxAirComp1, MinAirComp1 : MinAirComp1, 
                 LastAirComp2 : LastAirComp2, AvgAirComp2 : AvgAirComp2, MaxAirComp2 : MaxAirComp2, MinAirComp2 : MinAirComp2};
