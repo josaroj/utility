@@ -7,7 +7,7 @@ export default async function handler(req, res){
         const verifiedToken = verifyToken(token);
         if(verifiedToken){
             //console.log(req.body);
-            const {fromdate, todate} = req.body;
+            const {fromdate, todate} = req.data;
             const results = await query("SELECT * FROM meterdata WHERE date BETWEEN ? AND ?", [fromdate, todate]);
             //console.log(results);
             res.status(results.status.code).json(results);
