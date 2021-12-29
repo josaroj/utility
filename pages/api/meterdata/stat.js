@@ -3,11 +3,12 @@ import { verifyToken } from "../../../lib/auth";
 
 export default async function handler(req, res){
     if(req.method === "GET"){
+        console.log(req.body);
         const token = req.headers.authorization;
         const verifiedToken = verifyToken(token);
         if(verifiedToken){
             // console.log(req);
-            console.log(req.body);
+            
             const {token, fromDate, toDate} = req.body;
             const results = await query("SELECT * FROM meterdata WHERE date BETWEEN ? AND ?", [fromDate, toDate]);
             // console.log(results);
