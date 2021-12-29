@@ -9,14 +9,14 @@ export default async function handler(req, res){
         const results = await query("SELECT * from user WHERE username=? AND password=?",
         [user_username, user_password]);
 
-        console.log(req);
+        // console.log(req);
         console.log(req.body);
 
-        console.log(results);
+        // console.log(results);
         const results2 = JSON.stringify(results);
-        console.log(results2);
+        // console.log(results2);
         const results3 = JSON.parse(results2);
-        console.log(results3);
+        // console.log(results3);
 
         const data = results.data[0];
         if(data){
