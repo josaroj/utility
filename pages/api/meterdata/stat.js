@@ -6,6 +6,7 @@ export default async function handler(req, res){
         console.log(req.body);
         const token = req.headers.authorization;
         const verifiedToken = verifyToken(token);
+        console.log(token)
         if(verifiedToken){
             // console.log(req);
             
