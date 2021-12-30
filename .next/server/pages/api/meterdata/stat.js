@@ -63,12 +63,12 @@ __webpack_require__.r(__webpack_exports__);
 
 async function handler(req, res) {
     if (req.method === "GET") {
+        console.log(req);
         console.log(req.body);
         const token = req.headers.authorization;
         const verifiedToken = (0,_lib_auth__WEBPACK_IMPORTED_MODULE_1__/* .verifyToken */ .W)(token);
         console.log(token);
         if (verifiedToken) {
-            // console.log(req);
             const { fromDate , toDate  } = req.body;
             console.log(fromDate);
             console.log(toDate);
