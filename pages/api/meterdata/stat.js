@@ -13,7 +13,7 @@ export default async function handler(req, res){
             const {fromDate, toDate} = req.body;
             console.log(fromDate);
             console.log(toDate);
-            const results = await query("SELECT * FROM meterdata WHERE date ORDER BY DESC BETWEEN ? AND ?", [fromDate, toDate]);
+            const results = await query("SELECT * FROM meterdata WHERE date BETWEEN ? AND ? ORDER BY date DESC", [fromDate, toDate]);
             // console.log(results);
             res.status(results.status.code).json(results);
         }else{
