@@ -3,7 +3,7 @@ import { verifyToken } from "../../../lib/auth";
 
 
 export default async function handler(req, res){
-    if(req.method === "GET"){
+    if(req.method === "POST"){
         const token = req.headers.authorization;
         console.log(token);
         const verifiedToken = verifyToken(token);

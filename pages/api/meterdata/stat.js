@@ -2,8 +2,8 @@ import { query } from "../../../lib/db";
 import { verifyToken } from "../../../lib/auth";
 
 export default async function handler(req, res){
-    if(req.method === "GET"){
-        console.log(req);
+    if(req.method === "POST"){
+        //console.log(req);
         console.log(req.body);
         const token = req.headers.authorization;
         const verifiedToken = verifyToken(token);
