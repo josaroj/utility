@@ -67,7 +67,7 @@ async function handler(req, res) {
         const verifiedToken = (0,_lib_auth__WEBPACK_IMPORTED_MODULE_1__/* .verifyToken */ .W)(token);
         //console.log(verifiedToken)
         if (verifiedToken) {
-            console.log(req.body);
+            //console.log(req.body);
             const { date , time , userid , meterelec , meterwater , meteraircomp1 , meteraircomp2  } = req.body;
             const results = await (0,_lib_db__WEBPACK_IMPORTED_MODULE_0__/* .query */ .I)("INSERT INTO meterdata (date, time, userid, meterelec, meterwater, meteraircomp1, meteraircomp2) VALUES (?, ?, ?, ?, ?, ?, ?)", [
                 date,
@@ -78,7 +78,7 @@ async function handler(req, res) {
                 meteraircomp1,
                 meteraircomp2
             ]);
-            console.log(results);
+            //console.log(results);
             res.status(results.status.code).json(results);
         } else {
             res.status(401).json({

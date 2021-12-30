@@ -64,10 +64,12 @@ __webpack_require__.r(__webpack_exports__);
 async function handler(req, res) {
     if (req.method === "GET") {
         const token = req.headers.authorization;
+        console.log(token);
         const verifiedToken = (0,_lib_auth__WEBPACK_IMPORTED_MODULE_1__/* .verifyToken */ .W)(token);
         if (verifiedToken) {
-            const results0 = await (0,_lib_db__WEBPACK_IMPORTED_MODULE_0__/* .query */ .I)("SELECT * FROM meterdata ORDER BY id DESC LIMIT 1");
+            const results0 = await (0,_lib_db__WEBPACK_IMPORTED_MODULE_0__/* .query */ .I)("SELECT * FROM meterdata ORDER BY DATE_FORMAT(date, '%Y%m%d') DESC LIMIT 1");
             //console.log(results0);
+            const LastDate = results0.data[0].date;
             const LastElec = results0.data[0].meterelec;
             const LastWater = results0.data[0].meterwater;
             const LastAirComp1 = results0.data[0].meteraircomp1;
@@ -121,6 +123,7 @@ async function handler(req, res) {
             const MinAirComp2 = results11.data[0].MinAirComp2;
             //console.log(MinAirComp2);
             const test = {
+                LastDate: LastDate,
                 LastElec: LastElec,
                 AvgElec: AvgElec,
                 MaxElec: MaxElec,

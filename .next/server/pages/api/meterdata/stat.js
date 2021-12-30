@@ -63,16 +63,20 @@ __webpack_require__.r(__webpack_exports__);
 
 async function handler(req, res) {
     if (req.method === "GET") {
+        console.log(req.body);
         const token = req.headers.authorization;
         const verifiedToken = (0,_lib_auth__WEBPACK_IMPORTED_MODULE_1__/* .verifyToken */ .W)(token);
+        console.log(token);
         if (verifiedToken) {
-            //console.log(req.body);
-            const { fromdate , todate  } = req.body;
+            // console.log(req);
+            const { fromDate , toDate  } = req.body;
+            console.log(fromDate);
+            console.log(toDate);
             const results = await (0,_lib_db__WEBPACK_IMPORTED_MODULE_0__/* .query */ .I)("SELECT * FROM meterdata WHERE date BETWEEN ? AND ?", [
-                fromdate,
-                todate
+                fromDate,
+                toDate
             ]);
-            //console.log(results);
+            // console.log(results);
             res.status(results.status.code).json(results);
         } else {
             res.status(401).json({
