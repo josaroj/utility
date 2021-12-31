@@ -8,10 +8,7 @@ export default async function handler(req, res){
         console.log(token);
         const verifiedToken = verifyToken(token);
         if(verifiedToken){
-            // const results0 = await query("SELECT * FROM meterdata WHERE date IN (SELECT MAX(date) FROM meterdata)");
-            // const results0 = await query("SELECT * FROM meterdata ORDER BY DATE_FORMAT(date, '%Y%m%d') DESC LIMIT 1");
             const results0 = await query("SELECT * FROM meterdata ORDER BY date DESC, time DESC");
-
             console.log(results0);
             const LastDate = results0.data[0].date;
             const LastElec = results0.data[0].meterelec;
